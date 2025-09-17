@@ -22,8 +22,18 @@ def add(a: int, b:int):
 
     return a + b 
 
+@tool
+def subtract(a: int, b: int):
+    """Subtraction function"""
+    return a - b
 
-tools = [add]
+@tool
+def multiply(a: int, b: int):
+    """Multiplication function"""
+    return a * b
+
+tools = [add, subtract, multiply]
+
 
 model = init_chat_model(model="anthropic:claude-3-5-sonnet-latest").bind_tools(tools)
 
@@ -75,5 +85,5 @@ def print_stream(stream):
         else:
             message.pretty_print()
 
-inputs = {"messages": [("user", "Add 40 + 12 .")]}
+inputs = {"messages": [("user", "Add 40 + 12 and then multiply the result by 6. Also tell me a joke please..")]}
 print_stream(app.stream(inputs, stream_mode="values"))
