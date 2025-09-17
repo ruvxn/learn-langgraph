@@ -1,7 +1,7 @@
 from typing import Annotated, Sequence, TypedDict
 from dotenv import load_dotenv  
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, ToolMessage, SystemMessage
-from langchain_openai import ChatOpenAI
+from langchain.chat_models import init_chat_model
 from langchain_core.tools import tool
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph, END
@@ -50,7 +50,7 @@ def save(filename: str) -> str:
 
 tools = [update, save]
 
-model = ChatOpenAI(model="gpt-4o").bind_tools(tools)
+model = init_chat_model(model="anthropic:claude-3-5-sonnet-latest").bind_tools(tools)
 
 def our_agent(state: AgentState) -> AgentState:
     system_prompt = SystemMessage(content=f"""
@@ -78,7 +78,7 @@ def our_agent(state: AgentState) -> AgentState:
 
     print(f"\n AI: {response.content}")
     if hasattr(response, "tool_calls") and response.tool_calls:
-        print(f"🔧 USING TOOLS: {[tc['name'] for tc in response.tool_calls]}")
+        print(f" USING TOOLS: {[tc['name'] for tc in response.tool_calls]}")
 
     return {"messages": list(state["messages"]) + [user_message, response]}
 
