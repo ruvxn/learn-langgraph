@@ -22,7 +22,7 @@ def process(state: StateAgent) -> StateAgent:
      state["messages"].append(AIMessage(content=response.content))
 
      print(f"\nAI: {response.content}")
-     print("current state:", state["messages"])
+     #print("current state:", state["messages"])
 
      return state
 

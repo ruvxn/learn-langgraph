@@ -1,22 +1,11 @@
 Your Conversation Log:
-You: hey my name is ruveen
-AI: Hi Ruveen! Nice to meet you. How can I help you today?
+You: hey 
+AI: Hi! How can I help you today?
 
-You: how are you
-AI: I'm functioning well, thank you for asking! How are you doing today? Remember though, I'm an AI assistant, so I don't actually experience feelings in the way humans do. But I'm here and ready to help you with whatever you need!
+You: my name is ruveen
+AI: Hi Ruveen! Nice to meet you. How are you doing today?
 
-You: tell me an AI joke
-AI: Here's an AI-themed joke for you:
-
-Why don't AI assistants tell dad jokes?
-
-Because they're afraid of becoming a father.zip file! 
-
-Here's another one:
-
-What did the AI say when it walked into a bar?
-"Ouch. You should update my collision detection algorithm!"
-
-(These might be a bit nerdy, but that's how we AI's roll! 😄)
+You: whats my name
+AI: Your name is Ruveen.
 
 End of Conversation
